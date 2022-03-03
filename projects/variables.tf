@@ -1,4 +1,4 @@
-variable "vpc_name" { default = "hl360-test" }
+variable "vpc_name" { default = "my-test" }
 variable "region" { default = "us-central1" }
 variable "private_subnet_name" { default = "pri-subnet" }
 variable "public_subnet_name" { default = "pub-subnet" }
@@ -10,12 +10,12 @@ variable "auto_create" {default = "false"}
 
 
 
-variable "cluster_name" { default = "hl360-cluster" }
-variable "project_name" { default = "poc-hl7-clientgp1" }
+variable "cluster_name" { default = "my-cluster" }
+variable "project_name" { default = "po" }
 variable "node_count" { default = "1" }
-variable "machine_type" {default="e2-micro"}
+variable "machine_type" {default="e2-small"}
 variable "cluster_zone" {default = "us-central1-a"}
-variable "service_acc" {default = "jenkins@poc-hl7-clientgp1.iam.gserviceaccount.com"}
+variable "service_acc" {default = "jenkins2@#########.com"}
 
 
 
