@@ -1,0 +1,16 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        if docker run --rm -v /workspace:/workspace aquasec/trivy:latest fs /workspace --severity CRITICAL; then
+          echo "Critical issue detected"
+          exit 1
+        else
+          echo "Passed"
+          exit 0
+        fi
+    id: scanning for vulnerabilities
+options:
+  logging: "CLOUD_LOGGING_ONLY"
